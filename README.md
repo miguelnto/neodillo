@@ -5,13 +5,13 @@
 Neodillo is a lightweight multi-platform graphical web browser based on Dillo, but **aims to make some valuable changes**, such as:
 
 - [x] Option to play a video on an external Media Player (such as mpv)
-- [] Better support for modern CSS
-- [] Simple UI Adjustments
-- [] Render supported files according to their type
-- [] Customizable keybindings
-- [] Search dialog
-- [] New and clean codebase
-- [] And more...
+- [ ] Better support for modern CSS
+- [ ] Simple UI Adjustments
+- [ ] Render supported files according to their type
+- [ ] Customizable keybindings
+- [ ] Search dialog
+- [ ] New and clean codebase
+- [ ] And more...
 
 What Neodillo doesn't support (and won't):
 
