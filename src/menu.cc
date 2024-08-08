@@ -17,6 +17,7 @@
 
 #include <FL/Fl.H>
 #include <FL/Fl_Menu_Item.H>
+#include <cstring>
 
 #include "lout/misc.hh"    /* SimpleVector */
 #include "msg.h"
@@ -27,6 +28,7 @@
 #include "ui.hh" // for (UI *)
 #include "keys.hh"
 #include "timeout.hh"
+#include "url.h"
 
 /*
  * Local data types
@@ -112,15 +114,18 @@ static void Menu_open_url_nw_cb(Fl_Widget*, void *user_data)
 static void Menu_open_url_mp_cb(Fl_Widget*, void *user_data)
 {
    DilloUrl *url = (DilloUrl *)user_data;
+   Dstr *cmd = dStr_new(prefs.media_player);
+   dStr_append_c(cmd, ' ');
+   dStr_append(cmd, URL_STR_(url));
 
-    char str[500];    // FIXME: make this the size necessary to contain everything and not have buffer overflow
+   /* FIXME: this only works on unix-like systems */
+   
+   dStr_append(cmd, "> /dev/null 2>&1 &");
+   system(cmd->str);
 
-    strcpy (str, prefs.media_player);
-    strcat(str, " ");
-    strcat (str, URL_STR_(url));
-    strcat(str, "> /dev/null 2>&1 &");
-    puts (str);
-    system(str);
+    /* FIXME: the URL may be invalid, and the video won't be played. A pop-up should appear on the browser indicating this. */
+   
+   dStr_free(cmd, 1);
 }
 
 /**
