@@ -132,7 +132,7 @@ void a_Cookies_init(void)
 /**
  * Flush cookies to disk and free all the memory allocated.
  */
-void a_Cookies_freeall()
+void a_Cookies_freeall(void)
 {
 }
 

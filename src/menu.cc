@@ -17,7 +17,6 @@
 
 #include <FL/Fl.H>
 #include <FL/Fl_Menu_Item.H>
-#include <cstring>
 
 #include "lout/misc.hh"    /* SimpleVector */
 #include "msg.h"
@@ -28,7 +27,6 @@
 #include "ui.hh" // for (UI *)
 #include "keys.hh"
 #include "timeout.hh"
-#include "url.h"
 
 /*
  * Local data types
@@ -657,7 +655,7 @@ void a_Menu_history_popup(BrowserWindow *bw, int x, int y, int direction)
       ;
 
    pm = new Fl_Menu_Item[n + 1];
-   memset(pm, '\0', sizeof(Fl_Menu_Item[n + 1]));
+   memset(pm, '\0', (n+1)*sizeof(Fl_Menu_Item));
 
    for (i = 0; i < n; i++) {
       pm[i].label(FL_NORMAL_LABEL, a_History_get_title(history_list[i], 1));

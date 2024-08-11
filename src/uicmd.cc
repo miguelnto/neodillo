@@ -1069,7 +1069,7 @@ void a_UIcmd_save(void *vbw)
 /*
  * Select a file
  */
-const char *a_UIcmd_select_file()
+const char *a_UIcmd_select_file(void)
 {
    return a_Dialog_select_file("Dillo: Select a File", NULL, NULL);
 }

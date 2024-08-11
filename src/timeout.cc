@@ -38,7 +38,7 @@ void a_Timeout_repeat(float t, TimeoutCb_t cb, void *cbdata)
 /**
  * Stop running a timeout function
  */
-void a_Timeout_remove()
+void a_Timeout_remove(void)
 {
    /* in FLTK, timeouts run one time by default */
 }

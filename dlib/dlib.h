@@ -174,7 +174,7 @@ void dLib_show_messages(bool_t show);
  *- Misc utility functions ----------------------------------------------------
  */
 char *dGetcwd(void);
-char *dGethomedir();
+char *dGethomedir(void);
 char *dGetline(FILE *stream);
 int dClose(int fd);
 

@@ -901,7 +901,7 @@ char *dGetcwd(void)
 /**
  * Return the home directory in a static string (don't free)
  */
-char *dGethomedir ()
+char *dGethomedir(void)
 {
    static char *homedir = NULL;
 
